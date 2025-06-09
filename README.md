@@ -335,17 +335,6 @@ GROUP BY age_group;
 
 
 
-## 🔴 4. Interview Practice Tips
-
-### ✅ Practice Platforms
-
-* [LeetCode SQL](https://leetcode.com/problemset/database/)
-* [HackerRank SQL](https://www.hackerrank.com/domains/tutorials/10-days-of-sql)
-* [StrataScratch](https://www.stratascratch.com/)
-* [Mode SQL Tutorial](https://mode.com/sql-tutorial/)
-* [DB-Fiddle](https://www.db-fiddle.com/)
-
-
 
 ## ✅ Summary Cheat Sheet
 
