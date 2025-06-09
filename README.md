@@ -203,7 +203,137 @@ SELECT name, age,
 FROM students;
 ```
 
+````markdown
+
 ---
+
+## 🟢 1. More Basic SQL Queries
+
+### 📌 IS NULL / IS NOT NULL
+
+```sql
+SELECT * FROM students WHERE age IS NULL;
+SELECT * FROM students WHERE age IS NOT NULL;
+````
+
+---
+
+### 📌 Aliasing
+
+```sql
+SELECT name AS student_name, age AS student_age FROM students;
+```
+
+---
+
+### 📌 Mathematical Operations
+
+```sql
+SELECT name, age + 1 AS next_year_age FROM students;
+```
+
+---
+
+## 🟡 2. More Intermediate SQL Queries
+
+### 📌 Nested Subqueries
+
+```sql
+SELECT * FROM students
+WHERE age = (SELECT MAX(age) FROM students);
+```
+
+---
+
+### 📌 EXISTS
+
+```sql
+SELECT * FROM students s
+WHERE EXISTS (
+  SELECT 1 FROM courses c WHERE c.student_id = s.id
+);
+```
+
+---
+
+### 📌 DELETE with JOIN (MySQL)
+
+```sql
+DELETE s FROM students s
+LEFT JOIN courses c ON s.id = c.student_id
+WHERE c.student_id IS NULL;
+```
+
+---
+
+## 🟠 3. More Advanced SQL Queries
+
+### 📌 CTE with Aggregation
+
+```sql
+WITH avg_age_cte AS (
+  SELECT AVG(age) AS avg_age FROM students
+)
+SELECT * FROM students, avg_age_cte
+WHERE students.age > avg_age_cte.avg_age;
+```
+
+---
+
+### 📌 Multiple Window Functions
+
+```sql
+SELECT name, age,
+  ROW_NUMBER() OVER (ORDER BY age DESC) AS row_num,
+  RANK() OVER (ORDER BY age DESC) AS age_rank,
+  DENSE_RANK() OVER (ORDER BY age DESC) AS dense_rank
+FROM students;
+```
+
+---
+
+### 📌 LEAD / LAG (Window Navigation)
+
+```sql
+SELECT name, age,
+  LEAD(age) OVER (ORDER BY age) AS next_age,
+  LAG(age) OVER (ORDER BY age) AS previous_age
+FROM students;
+```
+
+---
+
+### 📌 UNION / UNION ALL
+
+```sql
+SELECT name FROM students
+UNION
+SELECT course_name FROM courses;
+
+SELECT name FROM students
+UNION ALL
+SELECT course_name FROM courses;
+```
+
+---
+
+### 📌 CASE with GROUP BY
+
+```sql
+SELECT
+  CASE
+    WHEN age < 20 THEN 'Teen'
+    WHEN age BETWEEN 20 AND 22 THEN 'Young Adult'
+    ELSE 'Adult'
+  END AS age_group,
+  COUNT(*) AS count
+FROM students
+GROUP BY age_group;
+```
+
+---
+
+
 
 ## 🔴 4. Interview Practice Tips
 
