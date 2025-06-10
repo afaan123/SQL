@@ -1,7 +1,7 @@
 
 ---
 
-# 📘 SQL Learning Guide (Complete for Interviews)
+# SQL Learning Guide (Complete for Interviews)
 
 ---
 
@@ -332,26 +332,3 @@ GROUP BY age_group;
 ```
 
 ---
-
-
-
-
-## Summary Cheat Sheet
-
-| Command    | Purpose                   |
-| ---------- | ------------------------- |
-| `SELECT`   | Read data from a table    |
-| `INSERT`   | Add new rows              |
-| `UPDATE`   | Modify existing rows      |
-| `DELETE`   | Remove rows               |
-| `WHERE`    | Filter rows               |
-| `JOIN`     | Combine tables            |
-| `GROUP BY` | Group rows for aggregates |
-| `ORDER BY` | Sort result set           |
-| `LIMIT`    | Limit number of rows      |
-| `CTE`      | Temporary result set      |
-| `CASE`     | If-else logic             |
-| `WINDOW`   | Row-wise ranking, stats   |
-
----
-
