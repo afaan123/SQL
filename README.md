@@ -5,15 +5,15 @@
 
 ---
 
-## 🟢 1. Basics of SQL
+## 1. Basics of SQL
 
-### 📌 What is SQL?
+### What is SQL?
 
 SQL (Structured Query Language) is used to interact with relational databases – to store, retrieve, and manipulate data.
 
 ---
 
-### ✅ Basic SQL Syntax
+### Basic SQL Syntax
 
 ```sql
 -- Create a table
@@ -57,9 +57,9 @@ DELETE FROM students WHERE id = 3;
 
 ---
 
-## 🟡 2. Intermediate SQL
+## 2. Intermediate SQL
 
-### 📌 DISTINCT, IN, BETWEEN, LIKE
+### DISTINCT, IN, BETWEEN, LIKE
 
 ```sql
 -- Remove duplicates
@@ -78,7 +78,7 @@ SELECT * FROM students WHERE name LIKE '%e'; -- Ends with e
 
 ---
 
-### 📌 Aggregate Functions
+### Aggregate Functions
 
 ```sql
 -- COUNT
@@ -92,7 +92,7 @@ SELECT MIN(age), MAX(age) FROM students;
 
 ---
 
-### 📌 GROUP BY and HAVING
+### GROUP BY and HAVING
 
 ```sql
 -- Group and aggregate
@@ -109,9 +109,9 @@ HAVING COUNT(*) > 1;
 
 ---
 
-### 📌 JOINS
+### JOINS
 
-#### 🧩 INNER JOIN
+#### INNER JOIN
 
 ```sql
 -- Tables
@@ -131,7 +131,7 @@ FROM students s
 INNER JOIN courses c ON s.id = c.student_id;
 ```
 
-#### 🧩 LEFT JOIN
+#### LEFT JOIN
 
 ```sql
 SELECT s.name, c.course_name
@@ -139,7 +139,7 @@ FROM students s
 LEFT JOIN courses c ON s.id = c.student_id;
 ```
 
-#### 🧩 RIGHT JOIN *(not supported in SQLite)*
+#### RIGHT JOIN *(not supported in SQLite)*
 
 ```sql
 -- Syntax (works in MySQL/PostgreSQL)
@@ -150,9 +150,9 @@ RIGHT JOIN courses c ON s.id = c.student_id;
 
 ---
 
-## 🟠 3. Advanced SQL
+## 3. Advanced SQL
 
-### 📌 Subqueries
+### Subqueries
 
 ```sql
 -- Get students older than average age
@@ -164,7 +164,7 @@ WHERE age > (
 
 ---
 
-### 📌 Common Table Expressions (CTE)
+### Common Table Expressions (CTE)
 
 ```sql
 WITH adults AS (
@@ -175,7 +175,7 @@ SELECT * FROM adults;
 
 ---
 
-### 📌 Window Functions
+### Window Functions
 
 ```sql
 -- Add row numbers based on age
@@ -191,7 +191,7 @@ FROM students;
 
 ---
 
-### 📌 CASE Statement
+### CASE Statement
 
 ```sql
 SELECT name, age,
@@ -207,9 +207,9 @@ FROM students;
 
 ---
 
-## 🟢 1. More Basic SQL Queries
+## 1. More Basic SQL Queries
 
-### 📌 IS NULL / IS NOT NULL
+### IS NULL / IS NOT NULL
 
 ```sql
 SELECT * FROM students WHERE age IS NULL;
@@ -218,7 +218,7 @@ SELECT * FROM students WHERE age IS NOT NULL;
 
 ---
 
-### 📌 Aliasing
+### Aliasing
 
 ```sql
 SELECT name AS student_name, age AS student_age FROM students;
@@ -226,7 +226,7 @@ SELECT name AS student_name, age AS student_age FROM students;
 
 ---
 
-### 📌 Mathematical Operations
+### Mathematical Operations
 
 ```sql
 SELECT name, age + 1 AS next_year_age FROM students;
@@ -234,9 +234,9 @@ SELECT name, age + 1 AS next_year_age FROM students;
 
 ---
 
-## 🟡 2. More Intermediate SQL Queries
+## 2. More Intermediate SQL Queries
 
-### 📌 Nested Subqueries
+###  Nested Subqueries
 
 ```sql
 SELECT * FROM students
@@ -245,7 +245,7 @@ WHERE age = (SELECT MAX(age) FROM students);
 
 ---
 
-### 📌 EXISTS
+###  EXISTS
 
 ```sql
 SELECT * FROM students s
@@ -256,7 +256,7 @@ WHERE EXISTS (
 
 ---
 
-### 📌 DELETE with JOIN (MySQL)
+### DELETE with JOIN (MySQL)
 
 ```sql
 DELETE s FROM students s
@@ -266,9 +266,9 @@ WHERE c.student_id IS NULL;
 
 ---
 
-## 🟠 3. More Advanced SQL Queries
+## 3. More Advanced SQL Queries
 
-### 📌 CTE with Aggregation
+### CTE with Aggregation
 
 ```sql
 WITH avg_age_cte AS (
@@ -280,7 +280,7 @@ WHERE students.age > avg_age_cte.avg_age;
 
 ---
 
-### 📌 Multiple Window Functions
+### Multiple Window Functions
 
 ```sql
 SELECT name, age,
@@ -292,7 +292,7 @@ FROM students;
 
 ---
 
-### 📌 LEAD / LAG (Window Navigation)
+###  LEAD / LAG (Window Navigation)
 
 ```sql
 SELECT name, age,
@@ -303,7 +303,7 @@ FROM students;
 
 ---
 
-### 📌 UNION / UNION ALL
+###  UNION / UNION ALL
 
 ```sql
 SELECT name FROM students
@@ -317,7 +317,7 @@ SELECT course_name FROM courses;
 
 ---
 
-### 📌 CASE with GROUP BY
+### CASE with GROUP BY
 
 ```sql
 SELECT
@@ -336,7 +336,7 @@ GROUP BY age_group;
 
 
 
-## ✅ Summary Cheat Sheet
+## Summary Cheat Sheet
 
 | Command    | Purpose                   |
 | ---------- | ------------------------- |
